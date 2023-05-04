@@ -10,16 +10,15 @@ namespace SkillFactory
     {
         static void Main(string[] args)
         {
-            const string MyName = "Eugene";
-            
-            Console.WriteLine(MyName);
-            Console.WriteLine("\t Hello? \n World");
-            Console.WriteLine("\t Im 33");
-            Console.WriteLine("\t My name is \n {0}", MyName);
-            Console.WriteLine("\u0040");
-            Console.WriteLine("\x23");
-            
-            Console.WriteLine("GitHub");
+            string MyName = "Eugene";
+            byte MyAge = 33;
+            bool HaveIApet = false;
+            double MyShoeSize = 42.5;
+
+            Console.WriteLine("My name is " + MyName);
+            Console.WriteLine("MyAge " + MyAge);
+            Console.WriteLine("Do I have a pet? " + HaveIApet);
+            Console.WriteLine("My shoe size is " + MyShoeSize);
 
             Console.ReadKey();
         }
