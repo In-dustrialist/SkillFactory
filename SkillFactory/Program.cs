@@ -10,6 +10,8 @@ namespace SkillFactory
     {
         static void Main(string[] args)
         {
+            string NewVar;
+            NewVar = MyName;
         }
     }
 }
