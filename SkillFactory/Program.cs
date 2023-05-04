@@ -18,6 +18,8 @@ namespace SkillFactory
             Console.WriteLine("\t My name is \n {0}", MyName);
             Console.WriteLine("\u0040");
             Console.WriteLine("\x23");
+            
+            Console.WriteLine("GitHub");
 
             Console.ReadKey();
         }
