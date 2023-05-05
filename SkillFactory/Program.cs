@@ -33,6 +33,9 @@ namespace SkillFactory
             Console.WriteLine("{0} \n {1} \n {2}", name, age, favcolor);
             Console.WriteLine();
 
+            string str = Console.ReadLine(); //Task 3.5.5
+            Console.WriteLine();
+
             Console.ReadKey();
         }
         enum ProgramData //Task 3.4.3
