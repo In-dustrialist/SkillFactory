@@ -21,10 +21,21 @@ namespace SkillFactory
             Console.WriteLine("My shoe size is " + MyShoeSize);
 
             
-            Console.WriteLine("\t Hello,\n World!");
+            Console.WriteLine("\t Hello,\n World!"); //Task 3.5.2
+            Console.WriteLine();
+
+            Console.WriteLine($"Im {MyAge}"); //Task 3.5.3
+            Console.WriteLine();
+
+            var name = "Jane";
+            var age = 27;
+            var favcolor = "black";
+            Console.WriteLine("{0} \n {1} \n {2}", name, age, favcolor);
+            Console.WriteLine();
+
             Console.ReadKey();
         }
-        enum ProgramData
+        enum ProgramData //Task 3.4.3
         {
             Red = 100, 
             Yellow = 200, 
