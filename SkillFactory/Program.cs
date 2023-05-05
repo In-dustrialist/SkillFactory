@@ -27,7 +27,7 @@ namespace SkillFactory
             Console.WriteLine($"Im {MyAge}"); //Task 3.5.3
             Console.WriteLine();
 
-            var name = "Jane";
+            var name = "Jane"; //Task 3.5.4
             var age = 27;
             var favcolor = "black";
             Console.WriteLine("{0} \n {1} \n {2}", name, age, favcolor);
