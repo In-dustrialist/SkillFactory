@@ -4,7 +4,7 @@ This repository was created as part of online course [SkillFactory: C# Developer
 
 ## Current Module: 3
 
-We are studying at the moment: **C# and CLR basics Basic concepts and data types**
+We are studying at the moment: **C# and CLR Basic concepts and data types**
 
 We already know:
 
