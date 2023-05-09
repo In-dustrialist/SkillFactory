@@ -19,17 +19,13 @@ namespace SkillFactory
         }
         static void Main(string[] args)
         {
-            ///Last task Unit 4.1.4
+            ///Task 4.1.5
 
-            int A;
-            int B;
-            double X;
-            double Y;
-
-            bool C = (A < B) || (X > Y);
+            var inv = true;
+            var result = !inv;
+            Console.WriteLine(result);
 
             Console.ReadKey();
         }
     }
-
 }
