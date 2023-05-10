@@ -19,11 +19,19 @@ namespace SkillFactory
         }
         static void Main(string[] args)
         {
-            ///Task 4.1.5
+            ///Task 4.1.12
 
-            var inv = true;
-            var result = !inv;
-            Console.WriteLine(result);
+            var a = 6;
+            var b = 7;
+
+            if (a != b)
+            {
+                Console.WriteLine("True");
+            }
+            else
+            {
+                Console.WriteLine("False");
+            }
 
             Console.ReadKey();
         }
