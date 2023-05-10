@@ -19,21 +19,35 @@ namespace SkillFactory
         }
         static void Main(string[] args)
         {
-            ///Task 4.1.12
+            ///Task 4.1.17
 
-            var a = 6;
-            var b = 7;
+            Console.WriteLine("Write your favorite color");
 
-            if (a != b)
+            var color = Console.ReadLine();
+
+            if (color == "red")
             {
-                Console.WriteLine("True");
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("Your color is red!");
+            }
+
+            else if (color == "green")
+            {
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("Your color is green!");
             }
             else
             {
-                Console.WriteLine("False");
-            }
+                Console.BackgroundColor = ConsoleColor.Cyan;
+                Console.ForegroundColor = ConsoleColor.Black;
 
-            Console.ReadKey();
+                Console.WriteLine("Your color is cyan!");
+            }
+                Console.ReadKey();
         }
     }
 }
