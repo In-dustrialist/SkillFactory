@@ -19,7 +19,7 @@ namespace SkillFactory
         }
         static void Main(string[] args)
         {
-            ///Task 4.1.17
+            ///Task 4.1.18
 
             Console.WriteLine("Write your favorite color");
 
