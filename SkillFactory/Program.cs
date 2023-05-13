@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,49 +9,51 @@ namespace SkillFactory
 {
     internal class Program
     {
-        enum DaysOfWeek : byte
-        {
-            Monday,
-            Tuesday,
-            Wednesday,
-            Thursday,
-            Friday,
-            Saturday
-        }
         static void Main(string[] args)
         {
             ///Task 4.1.18
 
-            Console.WriteLine("Write your favorite color");
+            Console.WriteLine("Cycle while");
+            int t = 0;
 
-            var color = Console.ReadLine();
-
-            switch (color)
+           do
             {
-                case "cyan":
-                    Console.BackgroundColor = ConsoleColor.Cyan;
-                    Console.ForegroundColor = ConsoleColor.Black;
+             
+                Console.WriteLine($"Iteration {t}");
+                Console.WriteLine("Write your favorite color");
+                
+                switch (Console.ReadLine())
+                {
+               
+                    case "cyan":
+                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-                    Console.WriteLine("Your color is cyan!");
-                    break;
+                        Console.WriteLine("Your color is cyan!");
+                        t++;
+                        break;
 
 
-                case "green":
-                    Console.BackgroundColor = ConsoleColor.Green;
-                    Console.ForegroundColor = ConsoleColor.Black;
+                    case "green":
+                        Console.BackgroundColor = ConsoleColor.Green;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-                    Console.WriteLine("Your color is green!");
-                    break;
+                        Console.WriteLine("Your color is green!");
+                        t++;
+                        break;
 
-                default:
-                    Console.BackgroundColor = ConsoleColor.Yellow;
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    default:
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Red;
 
-                    Console.WriteLine("Your color is yellow!");
-                    break;
-            }
-                    Console.ReadKey();
-            
+                        Console.WriteLine("Your color is yellow!");
+                        t++;
+                        break;
+
+                }
+                
+           } while (t < 3);
+            Console.ReadKey();
         }
     }
 }
