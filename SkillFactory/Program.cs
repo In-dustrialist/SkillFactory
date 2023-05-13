@@ -11,7 +11,7 @@ namespace SkillFactory
     {
         static void Main(string[] args)
         {
-            ///Task 4.1.18
+            ///Task 4.2.13
 
             Console.WriteLine("Cycle while");
             int t = 0;
@@ -52,7 +52,7 @@ namespace SkillFactory
 
                 }
                 
-           } while (t < 3);
+           } while (t < 0);
             Console.ReadKey();
         }
     }
