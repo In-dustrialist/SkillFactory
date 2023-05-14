@@ -11,49 +11,24 @@ namespace SkillFactory
     {
         static void Main(string[] args)
         {
-            ///Task 4.2.13
-
-            Console.WriteLine("Cycle while");
-            int t = 0;
-
-           do
+            ///Unit 4.3.6
+           
             {
-             
-                Console.WriteLine($"Iteration {t}");
-                Console.WriteLine("Write your favorite color");
-                
-                switch (Console.ReadLine())
+                Console.WriteLine("What is your name?");
+
+                var name = Console.ReadLine();
+
+                Console.WriteLine("Spell your name : ");
+
+                foreach (var ch in name)
                 {
-               
-                    case "cyan":
-                        Console.BackgroundColor = ConsoleColor.Cyan;
-                        Console.ForegroundColor = ConsoleColor.Black;
-
-                        Console.WriteLine("Your color is cyan!");
-                        t++;
-                        break;
-
-
-                    case "green":
-                        Console.BackgroundColor = ConsoleColor.Green;
-                        Console.ForegroundColor = ConsoleColor.Black;
-
-                        Console.WriteLine("Your color is green!");
-                        t++;
-                        break;
-
-                    default:
-                        Console.BackgroundColor = ConsoleColor.Yellow;
-                        Console.ForegroundColor = ConsoleColor.Red;
-
-                        Console.WriteLine("Your color is yellow!");
-                        t++;
-                        break;
-
+                    Console.Write(ch + " ");
                 }
-                
-           } while (t < 0);
+
+                Console.WriteLine("Last char in your name: {0}", name[0]);
+
+            }
             Console.ReadKey();
-        }
+            }
     }
 }
