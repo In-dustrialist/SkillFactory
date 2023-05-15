@@ -12,24 +12,16 @@ namespace SkillFactory
     {
         static void Main(string[] args)
         {
-            ///Unit 4.3.7
+            ///Unit 4.3.9
 
             {
-                Console.WriteLine("What is your name?");
 
-                var name = Console.ReadLine();
+                int[,] array = { { 1, 2, 3 }, { 5, 6, 7 } };
 
-                Console.WriteLine("Spell your name from the other end: ");
-
-                int i = name.Length;
-
-                while (i != 0)
-
+                foreach (var item in array)
                 {
-                    Console.Write("{0} ", name[i - 1]);
-                    i--;
+                    Console.Write(item + " ");
                 }
-
             }
             Console.ReadKey();
         }
