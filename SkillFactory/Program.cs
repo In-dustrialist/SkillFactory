@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace SkillFactory
 {
@@ -11,24 +12,26 @@ namespace SkillFactory
     {
         static void Main(string[] args)
         {
-            ///Unit 4.3.6
-           
+            ///Unit 4.3.7
+
             {
                 Console.WriteLine("What is your name?");
 
                 var name = Console.ReadLine();
 
-                Console.WriteLine("Spell your name : ");
+                Console.WriteLine("Spell your name from the other end: ");
 
-                foreach (var ch in name)
+                int i = name.Length;
+
+                while (i != 0)
+
                 {
-                    Console.Write(ch + " ");
+                    Console.Write("{0} ", name[i - 1]);
+                    i--;
                 }
-
-                Console.WriteLine("Last char in your name: {0}", name[0]);
 
             }
             Console.ReadKey();
-            }
+        }
     }
 }
