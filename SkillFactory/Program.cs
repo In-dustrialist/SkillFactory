@@ -16,12 +16,15 @@ namespace SkillFactory
             ///Unit 4.4.2
 
             {
-                (string name, int age) anketa;
+                var anketa = (name: "Eugene", age: 33);
+                Console.WriteLine("My name is {0} and Im {1}", anketa.name, anketa.age);
+                Console.WriteLine();
 
-                Console.WriteLine("Your name is:");
+                Console.Write("Your name is: ");
                 anketa.name = Convert.ToString(Console.ReadLine());
+                Console.WriteLine();
 
-                Console.WriteLine("Im: ");
+                Console.Write("Im: ");
                 anketa.age = Convert.ToInt32(Console.ReadLine());
 
                 Console.ReadKey();
