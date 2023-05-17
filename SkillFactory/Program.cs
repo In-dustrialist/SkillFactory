@@ -13,41 +13,17 @@ namespace SkillFactory
     {
         static void Main(string[] args)
         {
-            ///Unit 4.3.17
+            ///Unit 4.4.2
 
             {
+                (string name, int age) anketa;
 
-                int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
+                Console.WriteLine("Your name is:");
+                anketa.name = Convert.ToString(Console.ReadLine());
 
-                int temp;
+                Console.WriteLine("Im: ");
+                anketa.age = Convert.ToInt32(Console.ReadLine());
 
-                for (int i = 0; i <= arr.GetUpperBound(0); i++)
-                {
-                    for (int j = 0; j <= arr.GetUpperBound(1); j++)
-                    {
-
-                        for (int k = j + 1; k <= arr.GetUpperBound(1); k++)
-                        {
-
-                            if (arr[i, j] > arr[i, k])
-                            {
-                                temp = arr[i, j];
-                                arr[i, j] = arr[i, k];
-                                arr[i, k] = temp;
-                            }
-
-                        }
-
-                    }
-                }
-                for (int i = 0; i <= arr.GetUpperBound(0); i++)
-                {
-                    for (int k = 0; k <= arr.GetUpperBound(1); k++)
-
-                        Console.Write(arr[i, k] + " ");
-
-                    Console.WriteLine();
-                }
                 Console.ReadKey();
             }
         }
