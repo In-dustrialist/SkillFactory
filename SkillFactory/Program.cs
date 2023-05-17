@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
@@ -12,23 +13,41 @@ namespace SkillFactory
     {
         static void Main(string[] args)
         {
-            ///Unit 4.3.16
+            ///Unit 4.3.17
 
             {
 
-                int[,] array = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
+                int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
 
-                int sum = 0;
+                int temp;
 
-                for (int i = 0; i < array.GetUpperBound(0) + 1; i++)
+                for (int i = 0; i <= arr.GetUpperBound(0); i++)
                 {
-                    for (int k = 0; k < array.GetUpperBound(1) + 1; k++)
+                    for (int j = 0; j <= arr.GetUpperBound(1); j++)
+                    {
 
-                        if (array[i, k] > 0)
-                            sum++;
+                        for (int k = j + 1; k <= arr.GetUpperBound(1); k++)
+                        {
+
+                            if (arr[i, j] > arr[i, k])
+                            {
+                                temp = arr[i, j];
+                                arr[i, j] = arr[i, k];
+                                arr[i, k] = temp;
+                            }
+
+                        }
+
+                    }
                 }
+                for (int i = 0; i <= arr.GetUpperBound(0); i++)
+                {
+                    for (int k = 0; k <= arr.GetUpperBound(1); k++)
 
-                Console.WriteLine(sum);
+                        Console.Write(arr[i, k] + " ");
+
+                    Console.WriteLine();
+                }
                 Console.ReadKey();
             }
         }
