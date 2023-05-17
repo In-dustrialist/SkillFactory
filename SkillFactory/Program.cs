@@ -12,21 +12,22 @@ namespace SkillFactory
     {
         static void Main(string[] args)
         {
-            ///Unit 4.3.15
+            ///Unit 4.3.16
 
             {
 
-                var arr = new int[] { -5, 6, 9, 1, -2, 3, 4 };
+                int[,] array = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
 
                 int sum = 0;
-                
-                for (int i = 0; i < arr.Length; i++)
+
+                for (int i = 0; i < array.GetUpperBound(0) + 1; i++)
                 {
-                    if (arr[i] > 0)
-                    {
-                        sum++;
-                    }
+                    for (int k = 0; k < array.GetUpperBound(1) + 1; k++)
+
+                        if (array[i, k] > 0)
+                            sum++;
                 }
+
                 Console.WriteLine(sum);
                 Console.ReadKey();
             }
