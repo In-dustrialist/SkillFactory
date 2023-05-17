@@ -16,17 +16,19 @@ namespace SkillFactory
 
             {
 
-                int[] arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
+                int[][] array = new int[3][];
 
-                int x = 0;
+                array[0] = new int[2] { 1, 2 };
+                array[1] = new int[3] { 1, 2, 3 };
+                array[2] = new int[5] { 1, 2, 3, 4, 5 };
 
+                foreach (var i in array)
                 {
-
-                    for (int i = 0; i < arr.Length; i++)
+                    foreach (var j in i)
                     {
-                        x = x + arr[i];
+                        Console.Write(j + " ");
                     }
-                    Console.WriteLine(x);
+
                 }
             }
             Console.ReadKey();
