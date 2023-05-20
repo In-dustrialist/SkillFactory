@@ -14,7 +14,7 @@ namespace SkillFactory
     {
         static void Main(string[] args)
         {
-            ///Unit 4.5.2
+            ///Unit 4.5.3
 
             {
                 (string FirstName, string LastName, string Login, int LoginLength, bool HasPet, double Age, string[] favcolors) User;
@@ -29,6 +29,10 @@ namespace SkillFactory
 
                 Console.Write("Enter your login: ");
                 User.Login = (Console.ReadLine());
+                Console.WriteLine();
+
+                Console.Write("Enter your login: ");
+                User.LoginLength = User.Login.Length;
                 Console.WriteLine();
 
                 Console.ReadKey();
