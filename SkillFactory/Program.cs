@@ -14,12 +14,22 @@ namespace SkillFactory
     {
         static void Main(string[] args)
         {
-            ///Unit 4.5.1
+            ///Unit 4.5.2
 
             {
                 (string FirstName, string LastName, string Login, int LoginLength, bool HasPet, double Age, string[] favcolors) User;
 
-              
+                Console.Write("Enter your first name: ");
+                User.FirstName = (Console.ReadLine());
+                Console.WriteLine();
+
+                Console.Write("Enter your last name: ");
+                User.LastName = (Console.ReadLine());
+                Console.WriteLine();
+
+                Console.Write("Enter your login: ");
+                User.Login = (Console.ReadLine());
+                Console.WriteLine();
 
                 Console.ReadKey();
             }
