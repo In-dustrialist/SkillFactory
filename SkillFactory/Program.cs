@@ -30,10 +30,13 @@ namespace SkillFactory
                 Console.Write("Enter your login: ");
                 User.Login = (Console.ReadLine());
                 Console.WriteLine();
-
-                Console.Write("Enter your login: ");
-                User.LoginLength = User.Login.Length;
+                
+                int LoginLength = User.Login.Length;
+                Console.Write("Your login length: {0}", LoginLength);
                 Console.WriteLine();
+
+               
+
 
                 Console.ReadKey();
             }
