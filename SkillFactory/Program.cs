@@ -14,7 +14,7 @@ namespace SkillFactory
     {
         static void Main(string[] args)
         {
-            ///Unit 4.5.3
+            ///Unit 4.5.4
 
             {
                 (string FirstName, string LastName, string Login, int LoginLength, bool HasPet, double Age, string[] favcolors) User;
@@ -34,8 +34,13 @@ namespace SkillFactory
                 int LoginLength = User.Login.Length;
                 Console.Write("Your login length: {0}", LoginLength);
                 Console.WriteLine();
+                Console.WriteLine();
 
-               
+                Console.Write("Do you have a Pet? Yes or Not?");
+                var Pet = Console.ReadLine();
+                if (Pet == "Yes"){ User.HasPet = true; Console.WriteLine("Yes"); }
+                if (Pet != "Yes") { User.HasPet = false; Console.WriteLine("No"); }
+                
 
 
                 Console.ReadKey();
