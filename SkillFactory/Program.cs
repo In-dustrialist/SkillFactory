@@ -14,26 +14,12 @@ namespace SkillFactory
     {
         static void Main(string[] args)
         {
-            ///Unit 4.4.5
+            ///Unit 4.5.1
 
             {
-                (string Name, string Type, double Age, int NameCount) Pet;
+                (string FirstName, string LastName, string Login, int LoginLength, bool HasPet, double Age, string[] favcolors) User;
 
-                Console.Write("Pet name is: ");
-                Pet.Name = (Console.ReadLine());
-                Console.WriteLine();
-
-                Console.Write("Type of Pet is: ");
-                Pet.Name = (Console.ReadLine());
-                Console.WriteLine();
-
-                Console.Write("Pet age is: ");
-                Pet.Name = (Console.ReadLine());
-                Console.WriteLine();
-
-                Console.Write("Pet name count: ");
-                Pet.NameCount = Pet.Name.Length;
-                Console.WriteLine("{0}", Pet.NameCount);
+              
 
                 Console.ReadKey();
             }
