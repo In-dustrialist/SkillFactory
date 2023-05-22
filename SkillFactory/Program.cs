@@ -14,22 +14,31 @@ namespace SkillFactory
     {
         static void Main(string[] args)
         {
-            ///Unit 5.1.4
+            ///Unit 5.1.5
 
             {
-                Console.WriteLine("Test new Function");
-              
+                string[] favcolors = {"","",""};
+
+                for (int i = 0; i < favcolors.Length; i++)
+                {
+                    favcolors[i] = ShowColor();
+                }
+
+                foreach (string each in favcolors)
+                { Console.WriteLine(each);  }
+                
+
                 Console.ReadKey();
             }
-            
+
         }
-        static void ShowColor()
+        static string ShowColor()
         {
             Console.WriteLine("Enter your favotite color: ");
 
             var color = Console.ReadLine();
 
-            switch (Console.ReadLine())
+            switch (color)
             {
                 case "red":
 
@@ -45,10 +54,17 @@ namespace SkillFactory
 
                     Console.WriteLine("Your color is green!");
                     break;
+
+                case "cyan":
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is green!");
+                    break;
             }
-
-            Console.ReadKey();
-
+            return color;
         }
+
     }
+
 }
