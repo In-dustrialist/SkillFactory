@@ -1,9 +1,11 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Runtime.Serialization.Formatters;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
@@ -12,59 +14,41 @@ namespace SkillFactory
 {
     internal class Program
     {
+        
+        /// Unit 5.1.6
+        
         static void Main(string[] args)
+        { }
+        static int[] GerArrayConsole()
         {
-            ///Unit 5.1.5
+            var result = new int[5];
 
+            for (int i = 0; i < result.Length; i++)
             {
-                string[] favcolors = {"","",""};
+                Console.WriteLine("Enter the array element number: {0}", i + 1);
+                result[i] = int.Parse(Console.ReadLine());
+            }
 
-                for (int i = 0; i < favcolors.Length; i++)
+            int x = 0;
+
+            for (int i = 0; i < result.Length; i++)
+            {
+
+                for (int j = i + 1; j < result.Length; j++)
                 {
-                    favcolors[i] = ShowColor();
+                    if (result[i] > result[j])
+                    {
+                        x = result[i];
+                        result[i] = result[j];
+                        result[j] = x;
+                    }
                 }
-
-                foreach (string each in favcolors)
-                { Console.WriteLine(each);  }
-                
-
-                Console.ReadKey();
             }
-
-        }
-        static string ShowColor()
-        {
-            Console.WriteLine("Enter your favotite color: ");
-
-            var color = Console.ReadLine();
-
-            switch (color)
+            foreach (int i in result)
             {
-                case "red":
-
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.Black;
-
-                    Console.WriteLine("Your color is red!");
-                    break;
-
-                case "green":
-                    Console.BackgroundColor = ConsoleColor.Green;
-                    Console.ForegroundColor = ConsoleColor.Black;
-
-                    Console.WriteLine("Your color is green!");
-                    break;
-
-                case "cyan":
-                    Console.BackgroundColor = ConsoleColor.Cyan;
-                    Console.ForegroundColor = ConsoleColor.Black;
-
-                    Console.WriteLine("Your color is green!");
-                    break;
+                Console.WriteLine(i);
             }
-            return color;
+            return result;
         }
-
-    }
-
+    } 
 }
