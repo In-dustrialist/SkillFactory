@@ -8,47 +8,85 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Runtime.Serialization.Formatters;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using System.Xml.Schema;
 
 namespace SkillFactory
 {
     internal class Program
     {
-        
+
         /// Unit 5.1.6
-        
-        static void Main(string[] args)
-        { }
-        static int[] GerArrayConsole()
+
+        public static void Main(string[] args)
         {
-            var result = new int[5];
 
-            for (int i = 0; i < result.Length; i++)
+            var (name, age) = ("Eugene", 33);
+
+            Console.WriteLine("Your name is {0}", name);
+            Console.WriteLine("Your age is {0}", age);
+
+
+            Console.Write("Enter your name: ");
+            name = Convert.ToString(Console.ReadLine());
+            Console.Write("How old are you: ");
+            age = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Your name is: {0}", name);
+            Console.WriteLine("Your age is: {0}", age);
+
+            var favcolors = new string[3];
+
+
+            for (int i = 0; i < favcolors.Length; i++)
             {
-                Console.WriteLine("Enter the array element number: {0}", i + 1);
-                result[i] = int.Parse(Console.ReadLine());
+                favcolors[i] = ShowColor(name);
             }
 
-            int x = 0;
-
-            for (int i = 0; i < result.Length; i++)
+            Console.WriteLine("Your favorite color: ");
+            foreach (var color in favcolors)
             {
+                Console.WriteLine(color);
+            }
 
-                for (int j = i + 1; j < result.Length; j++)
-                {
-                    if (result[i] > result[j])
-                    {
-                        x = result[i];
-                        result[i] = result[j];
-                        result[j] = x;
-                    }
-                }
-            }
-            foreach (int i in result)
-            {
-                Console.WriteLine(i);
-            }
-            return result;
+            Console.ReadKey();
+
         }
-    } 
+        static string ShowColor(string username)
+        {
+            Console.WriteLine("Write your favorite color {0}", username);
+            var color = Console.ReadLine();
+
+            switch (color)
+            {
+                case "red":
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is red!");
+                    break;
+
+                case "green":
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is green!");
+                    break;
+                case "cyan":
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is cyan!");
+                    break;
+                default:
+                    Console.BackgroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColor = ConsoleColor.Red;
+
+                    Console.WriteLine("Your color is yellow!");
+                    break;
+            }
+
+            return color;
+        }
+    }
 }
