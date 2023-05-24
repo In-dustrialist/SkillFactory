@@ -20,73 +20,48 @@ namespace SkillFactory
 
         public static void Main(string[] args)
         {
-
-            var (name, age) = ("Eugene", 33);
-
-            Console.WriteLine("Your name is {0}", name);
-            Console.WriteLine("Your age is {0}", age);
-
-
-            Console.Write("Enter your name: ");
-            name = Convert.ToString(Console.ReadLine());
-            Console.Write("How old are you: ");
-            age = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Your name is: {0}", name);
-            Console.WriteLine("Your age is: {0}", age);
-
-            var favcolors = new string[3];
-
-
-            for (int i = 0; i < favcolors.Length; i++)
-            {
-                favcolors[i] = ShowColor(name, age);
-            }
-
-            Console.WriteLine("Your favorite color: ");
-            foreach (var color in favcolors)
-            {
-                Console.WriteLine(color);
-            }
-
+            GetArrayFromConsole();
+            Console.WriteLine("NEW ARRAY");
+            SortArray(GetArrayFromConsole());
             Console.ReadKey();
-
         }
-        static string ShowColor(string username, int userage)
+
+        static int[] GetArrayFromConsole()
         {
-            Console.WriteLine("Your name is: {0} and Your age is: {1} \n Write your favorite color: ", username, userage);
-            var color = Console.ReadLine();
+            var result = new int[5];
 
-            switch (color)
+            for (int i = 0; i < result.Length; i++)
             {
-                case "red":
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("Enter the array element {0} ", i + 1);
+                result[i] = int.Parse(Console.ReadLine());
+            }
+            return result;
+        }
+        static int[] SortArray(int[] result)
+        {
 
-                    Console.WriteLine("Your color is red!");
-                    break;
+            int temp = 0;
 
-                case "green":
-                    Console.BackgroundColor = ConsoleColor.Green;
-                    Console.ForegroundColor = ConsoleColor.Black;
-
-                    Console.WriteLine("Your color is green!");
-                    break;
-                case "cyan":
-                    Console.BackgroundColor = ConsoleColor.Cyan;
-                    Console.ForegroundColor = ConsoleColor.Black;
-
-                    Console.WriteLine("Your color is cyan!");
-                    break;
-                default:
-                    Console.BackgroundColor = ConsoleColor.Yellow;
-                    Console.ForegroundColor = ConsoleColor.Red;
-
-                    Console.WriteLine("Your color is yellow!");
-                    break;
+            for (int i = 0; i < result.Length; i++)
+            {
+                for (int j = i + 1; j < result.Length; j++)
+                {
+                    if (result[i] > result[j])
+                    {
+                        temp = result[i];
+                        result[i] = result[j];
+                        result[j] = temp;
+                    }
+                }
             }
 
-            return color;
-        }
+            foreach (var el in result)
+            {
+                Console.WriteLine(el);
+            }
+        
+            return result;
+        } 
+
     }
 }
