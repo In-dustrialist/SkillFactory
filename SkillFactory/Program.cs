@@ -16,7 +16,7 @@ namespace SkillFactory
     internal class Program
     {
 
-        /// Unit 5.1.6
+        /// Unit 5.2.7
 
         public static void Main(string[] args)
         {
@@ -40,7 +40,7 @@ namespace SkillFactory
 
             for (int i = 0; i < favcolors.Length; i++)
             {
-                favcolors[i] = ShowColor(name);
+                favcolors[i] = ShowColor(name, age);
             }
 
             Console.WriteLine("Your favorite color: ");
@@ -52,9 +52,9 @@ namespace SkillFactory
             Console.ReadKey();
 
         }
-        static string ShowColor(string username)
+        static string ShowColor(string username, int userage)
         {
-            Console.WriteLine("Write your favorite color {0}", username);
+            Console.WriteLine("Your name is: {0} and Your age is: {1} \n Write your favorite color: ", username, userage);
             var color = Console.ReadLine();
 
             switch (color)
