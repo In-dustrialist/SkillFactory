@@ -16,7 +16,7 @@ namespace SkillFactory
     internal class Program
     {
 
-        /// Unit 5.2.7
+        /// Unit 5.2.7 
 
         public static void Main(string[] args)
         {
