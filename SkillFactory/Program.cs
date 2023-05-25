@@ -16,7 +16,7 @@ namespace SkillFactory
     internal class Program
     {
 
-        /// Unit 5.2.7 
+        /// 5.2.8
 
         public static void Main(string[] args)
         {
@@ -26,9 +26,9 @@ namespace SkillFactory
             Console.ReadKey();
         }
 
-        static int[] GetArrayFromConsole()
+        static int[] GetArrayFromConsole(int num = 5)
         {
-            var result = new int[5];
+            var result = int[num];
 
             for (int i = 0; i < result.Length; i++)
             {
