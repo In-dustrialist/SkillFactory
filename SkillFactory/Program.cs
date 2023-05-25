@@ -16,7 +16,7 @@ namespace SkillFactory
     internal class Program
     {
 
-        /// 5.2.8
+        /// Unit 5.2.15 
 
         public static void Main(string[] args)
         {
@@ -24,19 +24,26 @@ namespace SkillFactory
             Console.WriteLine("NEW ARRAY");
             SortArray(GetArrayFromConsole());
             Console.ReadKey();
+
+            var array = GetArrayFromConsole();
+            var sortedarray = SortArray(array);
         }
 
-        static int[] GetArrayFromConsole(int num = 5)
+        static int[] GetArrayFromConsole()
         {
-            var result = int[num];
+            var result = new int[5];
 
             for (int i = 0; i < result.Length; i++)
             {
                 Console.WriteLine("Enter the array element {0} ", i + 1);
                 result[i] = int.Parse(Console.ReadLine());
             }
+            
             return result;
         }
+
+        
+        
         static int[] SortArray(int[] result)
         {
 
@@ -54,7 +61,6 @@ namespace SkillFactory
                     }
                 }
             }
-
             foreach (var el in result)
             {
                 Console.WriteLine(el);
