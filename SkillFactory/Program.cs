@@ -17,60 +17,23 @@ namespace SkillFactory
     internal class Program
     {
 
-        /// Unit 5.2.18
+        /// Unit 5.3.3
 
         public static void Main(string[] args)
         {
-            int[] array = new int[10];
-            GetArrayFromConsole(array);
-            ShowArray(array);
+            var someAge = 1;
+            Console.WriteLine(someAge);
+            MyAge(ref someAge);
+            Console.WriteLine(someAge);
 
         }
 
-        static void ShowArray(int[] array, bool Sort = false) 
-        {
-            var temp = array;
-            if (Sort == false)
-            { 
-                temp = SortArray(array); 
-            }
-        }
-
-        static int[] GetArrayFromConsole(int[] result)
+        static void MyAge(ref int age)
 
         {
+            Console.WriteLine();
+            age = Convert.ToInt32(Console.ReadLine());
 
-            for (int i = 0; i < result.Length; i++)
-            {
-                Console.WriteLine("Enter the array element {0} ", i + 1);
-                result[i] = int.Parse(Console.ReadLine());
-            }
-
-            return result;
-        }
-
-        static int[] SortArray(int[] result)
-        {
-
-            int temp = 0;
-            for (int i = 0; i < result.Length; i++)
-            {
-                for (int j = i + 1; j < result.Length; j++)
-                {
-                    if (result[i] > result[j])
-                    {
-                        temp = result[i];
-                        result[i] = result[j];
-                        result[j] = temp;
-                    }
-                }
-            }
-
-            foreach (var el in result)
-            {
-                Console.WriteLine(el);
-            }
-            return result;
         }
     }
 }
