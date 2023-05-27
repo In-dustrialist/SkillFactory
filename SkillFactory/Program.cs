@@ -21,34 +21,57 @@ namespace SkillFactory
 
         public static void Main(string[] args)
         {
-            //var somename = "Eugene";
-            var age = "12";
+            int[] array = new int[5];
+            GetArrayFromConsole(array);
+            int[] arr = array;
+            ShowArray(arr);
 
-            //Console.WriteLine(somename);
-            Console.WriteLine(age);
-
-            //GetName(somename);
-            ChangeAge(age);
-
-            //Console.WriteLine(somename);
-            Console.WriteLine(age);
         }
 
-        static void GetName(string name)
+        static void ShowArray(int[] array, bool Sort = false) 
         {
-            Console.WriteLine("Your name is: ");
-            name = Console.ReadLine();
-
+            var temp = array;
+            if (Sort == false)
+            { 
+                temp = SortArray(array); 
+            }
         }
 
-        static void ChangeAge(string age)
+        static int[] GetArrayFromConsole(int[] result)
+
         {
-            Console.WriteLine("Your age is: ");
-            age = Console.ReadLine();
 
+            for (int i = 0; i < result.Length; i++)
+            {
+                Console.WriteLine("Enter the array element {0} ", i + 1);
+                result[i] = int.Parse(Console.ReadLine());
+            }
+
+            return result;
         }
 
+        static int[] SortArray(int[] result)
+        {
+
+            int temp = 0;
+            for (int i = 0; i < result.Length; i++)
+            {
+                for (int j = i + 1; j < result.Length; j++)
+                {
+                    if (result[i] > result[j])
+                    {
+                        temp = result[i];
+                        result[i] = result[j];
+                        result[j] = temp;
+                    }
+                }
+            }
+
+            foreach (var el in result)
+            {
+                Console.WriteLine(el);
+            }
+            return result;
+        }
     }
-
-
 }
