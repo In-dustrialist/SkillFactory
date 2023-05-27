@@ -17,14 +17,13 @@ namespace SkillFactory
     internal class Program
     {
 
-        /// Unit 5.3.2
+        /// Unit 5.2.18
 
         public static void Main(string[] args)
         {
-            int[] array = new int[5];
+            int[] array = new int[10];
             GetArrayFromConsole(array);
-            int[] arr = array;
-            ShowArray(arr);
+            ShowArray(array);
 
         }
 
