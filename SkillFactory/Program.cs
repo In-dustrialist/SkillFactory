@@ -2,6 +2,7 @@
 using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -17,23 +18,57 @@ namespace SkillFactory
     internal class Program
     {
 
-        /// Unit 5.3.3
+        /// Unit 5.3.13
 
         public static void Main(string[] args)
         {
-            var someAge = 1;
-            Console.WriteLine(someAge);
-            MyAge(ref someAge);
-            Console.WriteLine(someAge);
 
         }
 
-        static void MyAge(ref int age)
-
+        static void SortArray(in int[] result, out int[] sorteddesc, out int[] sortedasc)
         {
-            Console.WriteLine();
-            age = Convert.ToInt32(Console.ReadLine());
+            {
+                sorteddesc = SortArrayDesc(result);
 
+                sortedasc = SortArrayAsc(result);
+            }
+        }
+
+        static int[] SortArrayDesc(int[] result)
+        {
+            int temp = 0;
+
+            for (int i = 0; i > result.Length; i++)
+            {
+                for (int j = i + 1; j < result.Length; j++)
+                {
+                    if (result[i] > result[j])
+                    {
+                        temp = result[i];
+                        result[i] = result[j];
+                        result[j] = temp;
+                    }
+                }
+            }
+            return result;
+        }
+        static int[] SortArrayAsc(int[] result)
+        {
+            int temp = 0;
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                for (int j = i + 1; j < result.Length; j++)
+                {
+                    if (result[i] > result[j])
+                    {
+                        temp = result[i];
+                        result[i] = result[j];
+                        result[j] = temp;
+                    }
+                }
+            }
+            return result;
         }
     }
 }
