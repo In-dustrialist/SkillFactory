@@ -18,57 +18,35 @@ namespace SkillFactory
     internal class Program
     {
 
-        /// Unit 5.3.13
+        /// Unit 5.5.3
 
-        public static void Main(string[] args)
+        class MainClass
         {
-
-        }
-
-        static void SortArray(in int[] result, out int[] sorteddesc, out int[] sortedasc)
-        {
+            public static void Main(string[] args)
             {
-                sorteddesc = SortArrayDesc(result);
+                Console.Write("Write something: ");
 
-                sortedasc = SortArrayAsc(result);
-            }
-        }
+                var str = Console.ReadLine();
 
-        static int[] SortArrayDesc(int[] result)
-        {
-            int temp = 0;
+                Console.Write("Specify echo depth: ");
 
-            for (int i = 0; i > result.Length; i++)
-            {
-                for (int j = i + 1; j < result.Length; j++)
+                var deep = int.Parse(Console.ReadLine());
+
+                for (int i = 0; i < deep; i++)
                 {
-                    if (result[i] > result[j])
+                    if (str.Length > 2)
                     {
-                        temp = result[i];
-                        result[i] = result[j];
-                        result[j] = temp;
+                        str = str.Remove(0, 2);
+                        Echo("..." + str);
                     }
+                    
                 }
             }
-            return result;
-        }
-        static int[] SortArrayAsc(int[] result)
-        {
-            int temp = 0;
 
-            for (int i = 0; i < result.Length; i++)
+            static void Echo(string saidword)
             {
-                for (int j = i + 1; j < result.Length; j++)
-                {
-                    if (result[i] > result[j])
-                    {
-                        temp = result[i];
-                        result[i] = result[j];
-                        result[j] = temp;
-                    }
-                }
+                Console.WriteLine(saidword);
             }
-            return result;
         }
     }
 }
