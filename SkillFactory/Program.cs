@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,34 +19,46 @@ namespace SkillFactory
     internal class Program
     {
 
-        /// Unit 5.5.3
+        /// Unit 5.5.8
 
         class MainClass
         {
             public static void Main(string[] args)
             {
-                Console.Write("Write something: ");
+                Console.Write("Number: ");
+                int Number = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Pow Number: ");
+                byte PowNumber  = Convert.ToByte(Console.ReadLine());
 
-                var str = Console.ReadLine();
-
-                Console.Write("Specify echo depth: ");
-
-                var deep = int.Parse(Console.ReadLine());
-
-                for (int i = 0; i < deep; i++)
-                {
-                    if (str.Length > 2)
-                    {
-                        str = str.Remove(0, 2);
-                        Echo("..." + str);
-                    }
-                    
-                }
+                Console.Write("Result: ");
+                Console.WriteLine(PowerUp(Number, PowNumber));
             }
 
-            static void Echo(string saidword)
+            private static int PowerUp(int N, byte pow)
             {
-                Console.WriteLine(saidword);
+                if (pow == 0)
+                {
+                   return 1;
+                }
+                else
+                {
+
+                    if (pow == 1)
+                    {
+                        return N;
+                    }
+                    else
+                    {
+                        int s = N;
+                        for (int i = pow; i > 1; i--)
+                        {
+                            s = N * s;
+                        }
+                        Console.WriteLine(s);
+                    }
+                    Console.ReadKey();
+                }
+                return N;
             }
         }
     }
