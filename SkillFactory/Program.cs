@@ -59,7 +59,7 @@ namespace SkillFactory
                 GetInfo(Pets);
             }
 
-            Console.WriteLine("How many favorite colors do you have?");
+            Console.WriteLine("How many favorite colors do you have? ");
             int Colors;
             do
             {
