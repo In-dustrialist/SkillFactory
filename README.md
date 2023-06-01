@@ -1,14 +1,8 @@
-# MyFirstApp
+# FINAL PROJECT
 
 This repository was created as part of online course [SkillFactory: C# Developer](https://skillfactory.ru/csharp)
 
-## Current Module: 3
+## Mudule 6 & 7 is currently in progress
 
-We are studying at the moment: **C# and CLR Basic concepts and data types**
+We are studying at the moment: **C# OOP CONCEPTS**
 
-We already know:
-
-* What is Visual Studio
-* What is Git and GitHub
-
-### Mudule 3 is currently in progress
