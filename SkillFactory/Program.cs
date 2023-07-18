@@ -21,14 +21,17 @@ namespace SkillFactory
 {
     class Program
     {
-        public static void Main(string[] args)
+        class Rectangle
         {
-            string b = "d";
-            int a = int.Parse(b);
-           
-            Console.WriteLine(a + b);
-            Console.ReadKey();
-        }
+            public int a;
+            public int b;
 
+            static int Square(int a, int b)
+            {
+                int s = a * b;
+                return s;
+            }
+
+        }
     }
 }

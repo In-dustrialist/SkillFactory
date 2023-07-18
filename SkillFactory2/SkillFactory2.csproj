@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{68E390F3-3554-429A-B0F4-86B6CE3729C8}</ProjectGuid>
+    <ProjectGuid>{DD37D3F5-660A-4ED5-96A4-281FD03F35D2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Stepik</RootNamespace>
-    <AssemblyName>Stepik</AssemblyName>
+    <RootNamespace>SkillFactory2</RootNamespace>
+    <AssemblyName>SkillFactory2</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
