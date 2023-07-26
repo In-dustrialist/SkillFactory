@@ -1,37 +1,37 @@
-﻿using Microsoft.Win32;
-using System;
-using System.CodeDom;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.SqlTypes;
-using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Runtime.Serialization.Formatters;
-using System.Security.Cryptography;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using System.Xml.Schema;
-using System.Xml.Serialization;
 
 namespace SkillFactory
 {
-    class Program
+    internal class Program
     {
-        class Rectangle
-        {
-            public int a;
-            public int b;
 
-            static int Square(int a, int b)
-            {
-                int s = a * b;
-                return s;
-            }
+        public static void Main(string[] args)
+        {
+            Employee employee = new Employee();
+            string name = employee?.Department?.Company?.Name ?? "Bank";
+
 
         }
+        class Employee
+        {
+            public Department Department;
+        }
+
+        class Department
+        {
+            public Company Company;
+        }
+
+        class Company
+        {
+            public string Name;
+        }
+
     }
 }
