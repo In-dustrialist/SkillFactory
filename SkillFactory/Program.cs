@@ -14,19 +14,51 @@ namespace SkillFactory
         {
 
         }
-
-        class TrafficLight
+        class User
         {
-            private void ChangeColor(string color)
-            {
+            private string login;
 
+            public string Login
+            {
+                get
+                {
+                    return login;
+                }
+
+                set
+                {
+                    if (value.Length < 3)
+                    {
+                        Console.WriteLine("Login must be at least 3 characters long");
+                    }
+                    else
+                    {
+                        login = value;
+                    }
+                }
             }
 
-            public string GetColor()
-            {
+            private string email;
 
+            public string Email
+            {
+                get
+                {
+                    return email;
+                }
+
+                set
+                {
+                    if (!value.Contains('@'))
+                    {
+                        Console.WriteLine("Incorrect adress");
+                    }
+                    else
+                    {
+                        email = value;
+                    }
+                }
             }
         }
-
     }
 }
