@@ -10,7 +10,9 @@ namespace SkillFactory2
     {
         static void Main(string[] args)
         {
-
+            string name = "Tom";
+            string name2 = "Hank";
+            Console.WriteLine("Hi,{0}, helper {1}", name, name2);
         }
     }
 }
