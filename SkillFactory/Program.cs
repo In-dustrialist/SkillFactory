@@ -9,31 +9,34 @@ using System.Xml.Linq;
 
 namespace SkillFactory
 {
-
-    class BaseClass
+    internal class Program
     {
-        protected string Name;
 
-        public BaseClass(string name)
+        class BaseClass
         {
-            Name = name;
+            public virtual void Display()
+            {
+                Console.WriteLine("Method BaseClass");
+            }
         }
-    }
 
-    class DerivedClass : BaseClass
-    {
-        public string Description;
-
-        public int Counter;
-
-        public DerivedClass(string name, string description) : base(name)
+        class DerivedClass: BaseClass
         {
-            Description = description;
+            public override void Display()
+            {
+                Console.WriteLine("Method DerivedClass");
+            }
         }
-        public DerivedClass2(string name, string description, int counter) : base(name)
+
+        static void Main(string[] args)
         {
-            Description = description;
-            Counter = counter;
+            BaseClass baseClass = new BaseClass();
+            baseClass.Display();
+
+            DerivedClass derivedClass = new DerivedClass();
+            derivedClass.Display();
+
+            Console.ReadKey();
         }
     }
 
