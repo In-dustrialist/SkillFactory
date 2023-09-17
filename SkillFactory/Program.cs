@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -11,33 +12,42 @@ namespace SkillFactory
 {
     internal class Program
     {
-
         class BaseClass
         {
-            public virtual void Display()
+            public virtual int Counter
             {
-                Console.WriteLine("Method BaseClass");
+                get;
+                set;
             }
         }
 
-        class DerivedClass: BaseClass
+        class DerivedClass : BaseClass
         {
-            public override void Display()
+            public int counterTwo;
+
+            public override int Counter
             {
-                Console.WriteLine("Method DerivedClass");
+                get
+                {
+                    return counterTwo;
+                }
+                set
+                {
+                    if (value < 0)
+                    {
+                        Console.WriteLine("Limit numbers below 0");
+                    }
+                    else
+                    {
+                        counterTwo = value;
+                    }
+                }
             }
-        }
 
-        static void Main(string[] args)
-        {
-            BaseClass baseClass = new BaseClass();
-            baseClass.Display();
+            static void Main(string[] args)
+            {
+            }
 
-            DerivedClass derivedClass = new DerivedClass();
-            derivedClass.Display();
-
-            Console.ReadKey();
         }
     }
-
 }
