@@ -12,27 +12,34 @@ namespace SkillFactory
 {
     internal class Program
     {
-        class BaseClass
+        class A
         {
-            public virtual void Display()
-            {
-                Console.WriteLine("Method BaseClass");
-            }
+        public virtual void Display() => Console.WriteLine("A");
         }
-
-        class DerivedClass : BaseClass
+        class B : A
         {
-            public override void Display()
-            {
-                base.Display();
-                Console.WriteLine("Method DerivedClass");
-            }
+            public new void Display() => Console.WriteLine("B");
+        }
+        class C : A
+        {
+            public override void Display() => Console.WriteLine("C");
+        }
+        class D : B
+        {
+            public new void Display() => Console.WriteLine("D");
+        }
+        class E : C
+        {
+            public new void Display() => Console.WriteLine("E");
         }
 
         static void Main(string[] args)
-        { 
-            DerivedClass derivedClass = new DerivedClass();
-            derivedClass.Display();
+        {
+            A a = new A(); a.Display(); 
+            B b = new B(); b.Display(); 
+            C c = new C(); c.Display(); 
+            D d = new D(); d.Display(); 
+            E e = new E(); e.Display();
 
             Console.ReadKey();
         }
