@@ -14,40 +14,27 @@ namespace SkillFactory
     {
         class BaseClass
         {
-            public virtual int Counter
+            public virtual void Display()
             {
-                get;
-                set;
+                Console.WriteLine("Method BaseClass");
             }
         }
 
         class DerivedClass : BaseClass
         {
-            public int counterTwo;
-
-            public override int Counter
+            public override void Display()
             {
-                get
-                {
-                    return counterTwo;
-                }
-                set
-                {
-                    if (value < 0)
-                    {
-                        Console.WriteLine("Limit numbers below 0");
-                    }
-                    else
-                    {
-                        counterTwo = value;
-                    }
-                }
+                base.Display();
+                Console.WriteLine("Method DerivedClass");
             }
+        }
 
-            static void Main(string[] args)
-            {
-            }
+        static void Main(string[] args)
+        { 
+            DerivedClass derivedClass = new DerivedClass();
+            derivedClass.Display();
 
+            Console.ReadKey();
         }
     }
 }
