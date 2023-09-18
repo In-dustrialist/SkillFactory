@@ -13,28 +13,27 @@ namespace SkillFactory
 {
     internal class Program
     {
-        class Obj
-        {
-            public int Value;
 
-            public static Obj operator +(Obj a, Obj b)
+        class IndexingClass
+        {
+            private int[] array;
+
+            public IndexingClass(int[] array)
             {
-                return new Obj
-                {
-                    Value = a.Value + b.Value
-                };
+                this.array = array;
             }
-            public static Obj operator -(Obj a, Obj b)
+
+            public int this[int index]
             {
-                return new Obj
-                {
-                    Value = a.Value - b.Value
-                };
+                get { return array[index]; }
+                set { array[index] = value; }
             }
         }
+
         static void Main(string[] args)
         {
-            
+
         }
+
     }
 }
