@@ -14,21 +14,14 @@ namespace SkillFactory
     internal class Program
     {
 
-        class IndexingClass
+        abstract class ComputerPart
         {
-            private int[] array;
-
-            public IndexingClass(int[] array)
-            {
-                this.array = array;
-            }
-
-            public int this[int index]
-            {
-                get { return array[index]; }
-                set { array[index] = value; }
-            }
+            public abstract void Work ();
         }
+        class Processor : ComputerPart { public override void Work() { } }
+        class MotherBoard : ComputerPart { public override void Work() { } }
+        class GraphicCard : ComputerPart { public override void Work() { } }
+
 
         static void Main(string[] args)
         {
