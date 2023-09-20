@@ -1,32 +1,32 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.ExceptionServices;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
-namespace SkillFactory
+namespace ConsoleApp1
 {
     internal class Program
     {
-
-        class Object
+        class Helper
         {
-            public string Name;
-            public string Description;
-            public static int maxValue = 2000;
+            static void Swap(ref int x, ref int y)
+            {
+                int t = x;
+                x = y;
+                y = t;
+
+            }
+
+            static void Main(string[] args)
+            {
+                int num1 = 3;
+                int num2 = 58;
+
+                Helper.Swap(ref num1, ref num2);
+                Console.WriteLine(num1);
+                Console.WriteLine(num2);
+            }
         }
-        
-
-
-        static void Main(string[] args)
-        {
-
-        }
-
     }
 }
