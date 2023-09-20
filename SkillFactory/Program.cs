@@ -14,13 +14,13 @@ namespace SkillFactory
     internal class Program
     {
 
-        abstract class ComputerPart
+        class Object
         {
-            public abstract void Work ();
+            public string Name;
+            public string Description;
+            public static int maxValue = 2000;
         }
-        class Processor : ComputerPart { public override void Work() { } }
-        class MotherBoard : ComputerPart { public override void Work() { } }
-        class GraphicCard : ComputerPart { public override void Work() { } }
+        
 
 
         static void Main(string[] args)
