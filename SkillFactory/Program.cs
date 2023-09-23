@@ -9,21 +9,24 @@ namespace ConsoleApp1
 {
     internal class Program
     {
-        class ElectricEngine { }
+        class Engine { }
+        class ElectricEngine : Engine { }
 
-        class GasEngine { }
+        class GasEngine : Engine { }
 
-        class Battery { }
+        class CarPart { }
 
-        class Differential { }
+        class Battery : CarPart { }
 
-        class Wheel { }
+        class Differential : CarPart { }
 
-        class Car<T1>
+        class Wheel : CarPart { }
+
+        class Car<T1> where T1 : Engine
         {
             public T1 Engine;
 
-            public virtual void ChangePart<T2>(T2 newPart)
+            public virtual void ChangePart<T2>(T2 newPart) where T2 : CarPart
             {
 
             }
