@@ -8,12 +8,14 @@ namespace ConsoleApp1
 {
     internal class Program
     {
-        class Car<T>
+        class Generic<T1, T2>
         {
-            public T Engine;
+            public T1 ID; // Поле типа T1
+
+            public T2 Value; // Поле типа T2
+
+            public DateTime Date;
         }
-        class ElectricEngine { }
-        class GasEngine { }
         static void Main(string[] args)
         {
 
