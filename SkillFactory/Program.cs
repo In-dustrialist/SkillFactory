@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,14 +9,26 @@ namespace ConsoleApp1
 {
     internal class Program
     {
-        class Generic<T1, T2>
+        class ElectricEngine { }
+
+        class GasEngine { }
+
+        class Battery { }
+
+        class Differential { }
+
+        class Wheel { }
+
+        class Car<T1>
         {
-            public T1 ID; // Поле типа T1
+            public T1 Engine;
 
-            public T2 Value; // Поле типа T2
+            public virtual void ChangePart<T2>(T2 newPart)
+            {
 
-            public DateTime Date;
+            }
         }
+
         static void Main(string[] args)
         {
 
