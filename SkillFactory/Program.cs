@@ -11,19 +11,18 @@ namespace ConsoleApp1
     internal class Program
     {
 
-        class SSD
+        public class Folder
         {
+            public List<string> Files { get; set; } = new List<string>();
 
-            public SSD(string Name, long Storage, long freeStorage)
+
+            Dictionary<string, Folder> Folders = new Dictionary<string, Folder>();
+
+            public void CreateFolder(string name)
             {
-                Name = "Samsung";
-                Storage = 500;
-                freeStorage = 240;
+                Folders.Add(name, new Folder());
+                Console.WriteLine("Folder is created");
             }
-            public string Name { get; }
-            public long Storage { get; }
-
-            public long FreeStorage { get; }
         }
         static void Main(string[] args)
         {
