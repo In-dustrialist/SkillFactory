@@ -16,25 +16,17 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
-            GetCatalogs(); //   Вызов метода получения директорий
-            MoveFolder();
-        }
-
-        static void GetCatalogs()
-        {
-            DirectoryInfo dirInfo = new DirectoryInfo(@"C:\Users\pinae\OneDrive\Рабочий стол");
-            if (!dirInfo.Exists)
-                dirInfo.Create();
-
-            dirInfo.CreateSubdirectory("testFolder");
-        }
-        static void MoveFolder()
-        {
-
-
-            DirectoryInfo dirInfo = new DirectoryInfo(@"C:\Users\pinae\OneDrive\Рабочий стол\testFolder");
-            dirInfo.Delete(true); // Удаление со всем содержимым
-            Console.WriteLine("Dleted");
-        }
+            string filePath = @"C:\Visual Studio\SkillFactory\Program.cs"; // Укажем путь 
+            
+            // Откроем файл и прочитаем его содержимое
+            using (StreamReader sr = File.OpenText(filePath))
+            {
+                string str = "";
+                while ((str = sr.ReadLine()) != null) // Пока не кончатся строки - считываем из файла по одной и выводим в консоль
+                {
+                    Console.WriteLine(str);
+                }
+            }
         }
     }
+}
