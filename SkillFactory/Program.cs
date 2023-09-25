@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Reflection;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +18,18 @@ namespace ConsoleApp1
         {
 
             string filePath = @"C:\Visual Studio\SkillFactory\Program.cs"; // Укажем путь 
-            
+
+
+            var fileInfo = new FileInfo(@"C:\Visual Studio\SkillFactory\Program.cs");
+
+            using (StreamWriter sw = fileInfo.AppendText())
+            {
+                sw.WriteLine($"Start Time: {DateTime.Now}");
+            }
             // Откроем файл и прочитаем его содержимое
             using (StreamReader sr = File.OpenText(filePath))
             {
+
                 string str = "";
                 while ((str = sr.ReadLine()) != null) // Пока не кончатся строки - считываем из файла по одной и выводим в консоль
                 {
