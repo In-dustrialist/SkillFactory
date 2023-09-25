@@ -40,10 +40,12 @@ namespace ConsoleApp1
 
                 Console.WriteLine(amountFiles);
                 Console.WriteLine();
-                
-               
-                
+
+                DirectoryInfo dirInfoDelte = new DirectoryInfo("C:\\NFolder");
+                dirInfo.Delete(true); // Удаление со всем содержимым
+                Console.WriteLine("Deleted");
             }
+            
         }
     }
 }
