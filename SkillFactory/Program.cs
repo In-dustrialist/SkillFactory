@@ -19,6 +19,12 @@ namespace ConsoleApp1
 
         static void GetCatalogs()
         {
+            DirectoryInfo dirInfo = new DirectoryInfo("C:\\NFolder");
+            if (!dirInfo.Exists)
+                dirInfo.Create();
+
+            dirInfo.CreateSubdirectory("NewFolder");
+
             string dirName = "C:\\"; // Прописываем путь к корневой директории Windows "C:\\")
             if (Directory.Exists(dirName)) // Проверим, что директория существует
             {
@@ -33,6 +39,10 @@ namespace ConsoleApp1
                 int amountFiles = files.Length;
 
                 Console.WriteLine(amountFiles);
+                Console.WriteLine();
+                
+               
+                
             }
         }
     }
