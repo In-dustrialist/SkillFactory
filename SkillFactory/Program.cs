@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
@@ -10,24 +11,29 @@ namespace ConsoleApp1
 {
     internal class Program
     {
-
-        public class Folder
-        {
-            public List<string> Files { get; set; } = new List<string>();
-
-
-            Dictionary<string, Folder> Folders = new Dictionary<string, Folder>();
-
-            public void CreateFolder(string name)
-            {
-                Folders.Add(name, new Folder());
-                Console.WriteLine("Folder is created");
-            }
-        }
         static void Main(string[] args)
         {
 
+            GetCatalogs(); //   Вызов метода получения директорий
+        }
 
+        static void GetCatalogs()
+        {
+            string dirName = "C:\\"; // Прописываем путь к корневой директории Windows "C:\\")
+            if (Directory.Exists(dirName)) // Проверим, что директория существует
+            {
+                Console.WriteLine("Folders:");
+                string[] dirs = Directory.GetDirectories(dirName);  // Получим все директории корневого каталога
+                int amountFolders = dirs.Length;
+                Console.WriteLine(amountFolders);
+
+                Console.WriteLine();
+                Console.WriteLine("Files:");
+                string[] files = Directory.GetFiles(dirName);// Получим все файлы корневого каталога
+                int amountFiles = files.Length;
+
+                Console.WriteLine(amountFiles);
+            }
         }
     }
 }
