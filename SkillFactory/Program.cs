@@ -8,42 +8,37 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 
 
 namespace ConsoleApp1
 {
     internal class Program
     {
+        [Serializable]
+        class Sur
+        {
+            public string Name { get; set; }
+            public long PhoneNumber { get; set; }
+            public string Email { get; set; }
+
+            public Sur(string name, long phoneNumber, string email)
+            {
+                Name = name;
+                PhoneNumber = phoneNumber;
+                Email = email;
+            }
+        }
+   
         static void Main(string[] args)
         {
+            var Sur = new Sur("Name", 456545, "email@email.com");
 
-            string filePath = @"C:\Users\pinae\OneDrive\Рабочий стол\BinaryFile.bin"; // Укажем путь 
-
-
-            var fileInfo = new FileInfo(@"C:\Users\pinae\OneDrive\Рабочий стол\BinaryFile.bin");
-
-            using (StreamWriter sw = fileInfo.AppendText())
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (var fs = new FileStream("Sur.bin", FileMode.OpenOrCreate))
             {
-                sw.WriteLine($"Start Time: {DateTime.Now}");
+                formatter.Serialize(fs, Sur);
             }
-            // Откроем файл и прочитаем его содержимое
-            using (StreamReader sr = File.OpenText(filePath))
-            {
-
-                string str = "";
-                while ((str = sr.ReadLine()) != null) // Пока не кончатся строки - считываем из файла по одной и выводим в консоль
-                {
-                    Console.WriteLine(str);
-                }
-            }
-
-            WriteValues();
-
-        }
-        static void WriteValues()
-        {
-            using (BinaryWriter writer = new BinaryWriter(File.Open("C:\\Users\\pinae\\OneDrive\\Рабочий стол\\BinaryFile.bin", FileMode.Open)))
-                writer.Write($"File changed {DateTime.Now} on the computer with {Environment.OSVersion}");
         }
     }
 }
