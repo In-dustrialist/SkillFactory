@@ -17,10 +17,10 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
-            string filePath = @"C:\Visual Studio\SkillFactory\Program.cs"; // Укажем путь 
+            string filePath = @"C:\Users\pinae\OneDrive\Рабочий стол\BinaryFile.bin"; // Укажем путь 
 
 
-            var fileInfo = new FileInfo(@"C:\Visual Studio\SkillFactory\Program.cs");
+            var fileInfo = new FileInfo(@"C:\Users\pinae\OneDrive\Рабочий стол\BinaryFile.bin");
 
             using (StreamWriter sw = fileInfo.AppendText())
             {
@@ -36,6 +36,14 @@ namespace ConsoleApp1
                     Console.WriteLine(str);
                 }
             }
+
+            WriteValues();
+
+        }
+        static void WriteValues()
+        {
+            using (BinaryWriter writer = new BinaryWriter(File.Open("C:\\Users\\pinae\\OneDrive\\Рабочий стол\\BinaryFile.bin", FileMode.Open)))
+                writer.Write($"File changed {DateTime.Now} on the computer with {Environment.OSVersion}");
         }
     }
 }
