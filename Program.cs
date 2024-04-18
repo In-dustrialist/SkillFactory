@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SkillFactory
-{ 
+{
+    /// <summary>
+    /// Task 15.6.6. (HW-03)
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
