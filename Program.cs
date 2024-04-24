@@ -10,7 +10,7 @@ namespace SkillFactory
     {
         /// <summary>
         /// Task 17.6.6. (HW-03)
-        /// Strategy
+        /// Strategy 
         /// </summary>
 
         static void Main(string[] args)
